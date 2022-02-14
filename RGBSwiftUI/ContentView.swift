@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var redComponent: Double = 0.5
+    @State var greenComponent: Double = 0.5
+    @State var blueComponent: Double = 0.5
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Slider(value: $redComponent)
+            Slider(value: $greenComponent)
+            Slider(value: $blueComponent)
+        }
     }
 }
 
@@ -19,3 +27,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
