@@ -18,7 +18,9 @@ struct ContentView: View {
             Slider(value: $redComponent)
             Slider(value: $greenComponent)
             Slider(value: $blueComponent)
+            Color(red: redComponent, green: greenComponent, blue: blueComponent)
         }
+        .padding(.all, 11.0)
     }
 }
 
