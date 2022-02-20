@@ -15,18 +15,21 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Color(red: redComponent, green: greenComponent, blue: blueComponent)
+            Color(
+                red: redComponent / 255,
+                green: greenComponent / 255,
+                blue: blueComponent / 255)
             HStack {
-                Text("\(redComponent)").foregroundColor(.red)
-                Slider(value: $redComponent)
+                Text("\(lround(redComponent))").foregroundColor(.red)
+                Slider(value: $redComponent, in: 0...255, step: 1)
             }
             HStack {
-                Text("\(greenComponent)").foregroundColor(.green)
-                Slider(value: $greenComponent)
+                Text("\(lround(greenComponent))").foregroundColor(.green)
+                Slider(value: $greenComponent, in: 0...255, step: 1)
             }
             HStack {
-                Text("\(blueComponent)").foregroundColor(.blue)
-                Slider(value: $blueComponent)
+                Text("\(lround(blueComponent))").foregroundColor(.blue)
+                Slider(value: $blueComponent, in: 0...255, step: 1)
             }
             
         }
